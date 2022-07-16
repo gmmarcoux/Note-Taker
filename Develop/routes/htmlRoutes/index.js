@@ -1,11 +1,18 @@
+//Dependencies
 const path = require('path');
 const fs = require('fs');
 
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/index.html'));
-});
 
+//HTML Routes
+module.exports = function (app) {
 
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/notes.html'));
-});
+  //index.html
+  app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../../public/index.html'));
+  });
+
+  //notes.html
+  app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../../public/notes.html'));
+  });
+};
