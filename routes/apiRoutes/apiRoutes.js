@@ -4,6 +4,7 @@ const fs = require('fs');
 
 //ID
 const generateUniqueID = require('generateuniqueid');
+const { brotliDecompress } = require('zlib');
 
 //Routes
 module.exports = (app) => {
@@ -16,14 +17,15 @@ module.exports = (app) => {
     //POST
     app.post('/api/notes', (req, res) => {
         
-       // req.body is where incoming content goes
+        // req.body is where incoming content goes
+        //set params for unique ID
         const currentNote = {
             title: req.body.title,
             text: req.body.text,
             id: generateUniqueID ({
                 useLetters: true,
                 useNumbers: true,
-                length: 15,
+                length: 7,
             })
         };
 
@@ -31,11 +33,16 @@ module.exports = (app) => {
         db.push(currentNote);
         fs.writeFileSync('db/db.json', JSON.stringify(db));
         res.json(db);
-      });
+        });
 
-    //DELETE
-      app.get('/api/notes/:id', function(req, res) {
-          res.json(notes[req.params.id]);
-      });
+        //DELETE & UPDATE notes by their ID
+    app.delete('/api/notes/:id', (req, res) => {
+        //identifying notes and removal
+        let db = JSON.parse(fs.readFileSync('db/db.json'))
+        let deleteNote = db.filter(item => item.id!== req.params.id);
 
+        //updating deletion
+            fs.writeFileSync('db/db.JSON', JSON.stringify(deleteNote));
+            res.json(deleteNote);
+    });
 };
