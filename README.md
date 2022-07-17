@@ -33,13 +33,14 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ## Installation and Usage
 To begin, clone the code onto your computer and open the terminal. Run the following snippet of code to install all the needed packages.
 
-'''<npm i>'''
+**npm i**
 
 After the packages finish installing, run the following to begin running the server at localhost:3000
 
-'''npm start'''
+**npm start**
 
-##Screen-shots of website and code
+## Screen-shots of website and code
+
 <img width="1440" alt="Screen Shot 2022-07-16 at 7 08 40 PM" src="https://user-images.githubusercontent.com/98123372/179378862-2ed11bda-ba90-4999-8fed-8087d0ee3892.png">
 <img width="457" alt="Screen Shot 2022-07-16 at 7 26 43 PM" src="https://user-images.githubusercontent.com/98123372/179378893-22da9a04-41f2-4084-8db9-a856ab337919.png">
 <img width="1405" alt="Screen Shot 2022-07-16 at 7 28 00 PM" src="https://user-images.githubusercontent.com/98123372/179378931-f585506e-0e7a-4a02-9fdb-cd8f54fc4d98.png">
