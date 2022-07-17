@@ -3,8 +3,10 @@ const path = require('path');
 const fs = require('fs');
 
 //ID
-const generateUniqueID = require('generateuniqueid');
-const { brotliDecompress } = require('zlib');
+const generateUniqueID = require('generateUniqueID');
+
+//Require
+require('./routes/htmlRoutes')
 
 //Routes
 module.exports = (app) => {

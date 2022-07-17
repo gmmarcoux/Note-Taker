@@ -7,12 +7,12 @@ const fs = require('fs');
 module.exports = function (app) {
 
   //index.html
-  app.get('/', function(req, res) {
+  app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/index.html'));
   });
 
   //notes.html
-  app.get('/', function(req, res) {
+  app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/notes.html'));
   });
 };

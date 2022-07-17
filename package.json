@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/gmmarcoux/Note-Taker/issues"
   },
-  "homepage": "https://github.com/gmmarcoux/Note-Taker#readme"
+  "homepage": "https://github.com/gmmarcoux/Note-Taker#readme",
+  "devDependencies": {}
 }
